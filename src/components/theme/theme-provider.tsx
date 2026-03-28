@@ -26,11 +26,13 @@ function getPreferredTheme(): Theme {
     return storedTheme;
   }
 
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  // Default to dark mode — portfolio looks best in dark
+  return "dark";
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>("light");
+  // Initialize to dark so first paint matches
+  const [theme, setThemeState] = useState<Theme>("dark");
 
   useEffect(() => {
     const preferredTheme = getPreferredTheme();
