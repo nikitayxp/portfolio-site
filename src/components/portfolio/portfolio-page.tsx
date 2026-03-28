@@ -11,6 +11,7 @@ import { AnimatedText } from "@/components/ui/animated-text";
 import { SectionReveal, RevealItem } from "@/components/ui/section-reveal";
 import { ParallaxOrbs } from "@/components/ui/parallax-orbs";
 import { AnimatedNav, AnimatedNavMobile } from "@/components/ui/animated-nav";
+import { ContactForm } from "@/components/portfolio/contact-form";
 import { profileContent } from "@/content/profile";
 import type { AppLocale } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -567,66 +568,67 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
           >
             {labels.availability}
           </motion.p>
-          <motion.div
-            className="mt-7 flex flex-wrap gap-3 text-sm"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: { staggerChildren: 0.08, delayChildren: 0.3 },
-              },
-            }}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <RevealItem>
-              <MagneticButton
-                as="a"
-                href={`mailto:${content.email}`}
-                className="inline-flex min-h-11 items-center rounded-full bg-brand px-5 py-3 font-semibold text-white transition-colors hover:bg-accent hover:shadow-[0_8px_30px_-6px_rgba(37,99,235,0.5)]"
-                strength={0.35}
-              >
-                Email
-              </MagneticButton>
-            </RevealItem>
-            <RevealItem>
-              <MagneticButton
-                as="a"
-                href={content.linkedin}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-zinc-600 px-5 py-3 font-semibold text-zinc-100 transition-colors hover:bg-zinc-800"
-                strength={0.35}
-              >
-                LinkedIn
-              </MagneticButton>
-            </RevealItem>
-            <RevealItem>
-              <MagneticButton
-                as="a"
-                href={content.github}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-zinc-600 px-5 py-3 font-semibold text-zinc-100 transition-colors hover:bg-zinc-800"
-                strength={0.35}
-              >
-                GitHub
-              </MagneticButton>
-            </RevealItem>
-            <RevealItem>
-              <MagneticButton
-                as="a"
-                href={content.resumeUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex min-h-11 items-center rounded-full border border-zinc-600 px-5 py-3 font-semibold text-zinc-100 transition-colors hover:bg-zinc-800"
-                strength={0.35}
-              >
-                {labels.downloadResume}
-              </MagneticButton>
-            </RevealItem>
-          </motion.div>
+          <div className="mt-10 grid gap-12 lg:grid-cols-[1fr_280px]">
+            <motion.div
+              variants={fadeSlideUp(0.3)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <ContactForm />
+            </motion.div>
+
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.08, delayChildren: 0.4 },
+                },
+              }}
+              className="flex flex-col gap-3"
+            >
+              <RevealItem>
+                <MagneticButton
+                  as="a"
+                  href={content.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-zinc-700 bg-zinc-900/50 px-5 py-3 font-semibold text-zinc-200 transition-colors hover:bg-zinc-800"
+                  strength={0.2}
+                >
+                  LinkedIn
+                </MagneticButton>
+              </RevealItem>
+              <RevealItem>
+                <MagneticButton
+                  as="a"
+                  href={content.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-zinc-700 bg-zinc-900/50 px-5 py-3 font-semibold text-zinc-200 transition-colors hover:bg-zinc-800"
+                  strength={0.2}
+                >
+                  GitHub
+                </MagneticButton>
+              </RevealItem>
+              <RevealItem>
+                <MagneticButton
+                  as="a"
+                  href={content.resumeUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-zinc-700 bg-zinc-900/50 px-5 py-3 font-semibold text-zinc-200 transition-colors hover:bg-zinc-800"
+                  strength={0.2}
+                >
+                  {labels.downloadResume}
+                </MagneticButton>
+              </RevealItem>
+            </motion.div>
+          </div>
 
           {/* Animated background gradient for contact */}
           <motion.div

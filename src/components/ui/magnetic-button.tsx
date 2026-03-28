@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import type { ReactNode, MouseEvent } from "react";
+import type { ReactNode, MouseEvent, ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 import { motion, useMotionValue, useSpring, useReducedMotion } from "framer-motion";
 
 type MagneticButtonProps = {
@@ -13,6 +13,8 @@ type MagneticButtonProps = {
   rel?: string;
   onClick?: () => void;
   strength?: number;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 };
 
 export function MagneticButton({
@@ -24,6 +26,8 @@ export function MagneticButton({
   rel,
   onClick,
   strength = 0.35,
+  type,
+  disabled,
 }: MagneticButtonProps) {
   const prefersReducedMotion = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
@@ -73,6 +77,8 @@ export function MagneticButton({
       target={target}
       rel={rel}
       onClick={onClick}
+      type={type}
+      disabled={disabled}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
