@@ -2,14 +2,25 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  --background: #fafafa;
+  /* Light mode — high contrast, refined slate palette */
+  --background: #f8fafc;
   --surface: #ffffff;
-  --foreground: #09090b;
-  --muted: #3f3f46;
-  --brand: #2563eb;
-  --brand-soft: #dbeafe;
-  --accent: #0891b2;
-  --border: #e4e4e7;
+  --foreground: #020617;
+  --muted: #475569;
+  --brand: #1d4ed8;
+  --brand-soft: #bfdbfe;
+  --accent: #0e7490;
+  --border: #bfdbfe;
+
+  /* Animation tokens */
+  --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-section: 0.7s;
+  --duration-micro: 0.3s;
+  --duration-fast: 0.15s;
+
+  /* Mouse follower */
+  --cursor-size: 20px;
+  --cursor-size-hover: 48px;
 }
 
 .dark {
@@ -37,6 +48,36 @@
   --font-mono: var(--font-mono);
 }
 
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Hide default cursor on desktop when mouse follower is active */
+@media (pointer: fine) {
+  body.cursor-ready {
+    cursor: none;
+  }
+  body.cursor-ready a,
+  body.cursor-ready button,
+  body.cursor-ready [role="button"] {
+    cursor: none;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -48,6 +89,24 @@ body {
 ::selection {
   background: var(--brand-soft);
   color: var(--foreground);
+}
+
+/* Subtle scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
 }
 
 @media (prefers-reduced-motion: reduce) {
