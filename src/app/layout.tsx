@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     template: "%s | Nikita Slobodeniuc",
   },
   description:
-    "Junior IT Technician and Full-Stack Developer portfolio focused on modern web solutions.",
-  metadataBase: new URL("https://portfolio-site-gamma-six.vercel.app"),
+    "Full Stack Developer portfolio — Next.js, React Native, Supabase and production-ready web apps.",
+  metadataBase: new URL("https://portfolio-nikita-slobodeniuc.vercel.app"),
   alternates: {
     languages: {
       pt: "/pt",
