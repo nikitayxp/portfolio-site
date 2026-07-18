@@ -11,6 +11,7 @@ import { AnimatedText } from "@/components/ui/animated-text";
 import { SectionReveal, RevealItem } from "@/components/ui/section-reveal";
 import { ParallaxOrbs } from "@/components/ui/parallax-orbs";
 import { AnimatedNav, AnimatedNavMobile } from "@/components/ui/animated-nav";
+import { ContactForm } from "@/components/portfolio/contact-form";
 import { profileContent } from "@/content/profile";
 import type { AppLocale } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -537,7 +538,7 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <p className="text-sm text-muted">Contact form coming soon.</p>
+              <ContactForm />
             </motion.div>
 
             <motion.div
