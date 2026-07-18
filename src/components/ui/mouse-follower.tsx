@@ -113,8 +113,8 @@ export function MouseFollower() {
           scale: isClicking ? 0.8 : 1,
         }}
         transition={{
-          width: { type: "spring", stiffness: 300, damping: 25 },
-          height: { type: "spring", stiffness: 300, damping: 25 },
+          width: { type: "spring", stiffness: 280, damping: 24 },
+          height: { type: "spring", stiffness: 280, damping: 24 },
           opacity: { duration: 0.15 },
           scale: { type: "spring", stiffness: 500, damping: 20 },
         }}
