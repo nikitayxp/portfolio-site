@@ -1,1 +1,7 @@
-export default function Home() { return <main>Portfolio</main>; }
+import { redirect } from "next/navigation";
+
+import { defaultLocale } from "@/lib/i18n";
+
+export default function Home() {
+  redirect(`/${defaultLocale}`);
+}
