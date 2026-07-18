@@ -2,7 +2,7 @@
 
 Portfolio pessoal bilingue (PT/EN) feito com Next.js.
 
-Sou estudante de Desenvolvimento de Software (CTeSP — ISTEC Lisboa) e estou a construir este projeto para mostrar o que sei fazer no frontend e um pouco de backend.
+Sou estudante de Desenvolvimento de Software
 
 ## O que tem
 
