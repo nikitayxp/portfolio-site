@@ -521,18 +521,28 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
           >
             {content.education.map((item) => (
               <RevealItem key={`${item.school}-${item.period}`}>
-                <div className="rounded-2xl border border-border bg-surface p-6">
+                <MouseGlowCard
+                  className="rounded-2xl border border-border bg-surface p-6 transition-shadow duration-300 hover:shadow-[0_8px_30px_-12px_rgba(37,99,235,0.15)]"
+                  hoverY={-3}
+                  tiltStrength={5}
+                >
                   <p className="font-semibold text-foreground">{item.program}</p>
                   <p className="mt-1 text-sm text-muted">
                     {item.school} · {item.period}
                   </p>
-                </div>
+                </MouseGlowCard>
               </RevealItem>
             ))}
             <RevealItem>
-              <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
-                {content.languagesSpoken.join(" · ")}
-              </p>
+              <MouseGlowCard
+                className="rounded-2xl border border-border bg-surface p-5 transition-shadow duration-300 hover:shadow-[0_8px_30px_-12px_rgba(37,99,235,0.15)]"
+                hoverY={-2}
+                tiltStrength={4}
+              >
+                <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+                  {content.languagesSpoken.join(" · ")}
+                </p>
+              </MouseGlowCard>
             </RevealItem>
           </motion.div>
         </SectionReveal>
