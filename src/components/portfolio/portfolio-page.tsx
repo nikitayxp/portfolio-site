@@ -60,12 +60,12 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navProjects: "Projetos",
       navExperience: "Experiencia",
       navContact: "Contacto",
-      heroKicker: "Junior IT Technician · Full-Stack Track",
+      heroKicker: "Desenvolvedor Full Stack · ISTEC Lisboa",
       openProject: "Abrir projeto",
       downloadResume: "Download CV",
-      impactTag: "A construir software pratico com impacto real.",
+      impactTag: "Projetos em produção, da interface ao deploy.",
       availability:
-        "Disponivel para oportunidades em desenvolvimento full-stack, suporte tecnico e colaboracoes freelance.",
+        "Disponível para oportunidades em desenvolvimento full-stack e colaborações freelance.",
       langSwitch: "Idioma",
     },
     en: {
@@ -74,12 +74,12 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navProjects: "Projects",
       navExperience: "Experience",
       navContact: "Contact",
-      heroKicker: "Junior IT Technician · Full-Stack Track",
+      heroKicker: "Full Stack Developer · ISTEC Lisbon",
       openProject: "Open project",
       downloadResume: "Download Resume",
-      impactTag: "Building practical software with measurable outcomes.",
+      impactTag: "Production projects, from interface to deploy.",
       availability:
-        "Available for full-stack opportunities, technical support roles and freelance collaborations.",
+        "Available for full-stack development opportunities and freelance collaborations.",
       langSwitch: "Language",
     },
   }[locale];
@@ -94,13 +94,25 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
 
   const skillGroups = [
     {
-      label: locale === "pt" ? "Hardware e Suporte" : "Hardware and Support",
-      items: content.skills.supportAndHardware,
+      label: locale === "pt" ? "Linguagens" : "Languages",
+      items: content.skills.languages,
     },
-    { label: locale === "pt" ? "Linguagens" : "Languages", items: content.skills.languages },
-    { label: locale === "pt" ? "Web e Cloud" : "Web and Cloud", items: content.skills.webAndCloud },
-    { label: locale === "pt" ? "Ferramentas" : "Tools", items: content.skills.tools },
-    { label: "Design", items: content.skills.design },
+    {
+      label: locale === "pt" ? "Frontend e Mobile" : "Frontend and Mobile",
+      items: content.skills.frontendAndMobile,
+    },
+    {
+      label: locale === "pt" ? "Backend e Cloud" : "Backend and Cloud",
+      items: content.skills.backendAndCloud,
+    },
+    {
+      label: locale === "pt" ? "Ferramentas e práticas" : "Tools and practices",
+      items: content.skills.tools,
+    },
+    {
+      label: locale === "pt" ? "Sistemas e Hardware" : "Systems and Hardware",
+      items: content.skills.systemsAndHardware,
+    },
   ];
 
   return (
@@ -495,20 +507,33 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
             stagger={0.05}
           />
           <motion.div
-            className="rounded-2xl border border-border bg-surface p-6"
-            variants={fadeSlideUp(0.15)}
+            className="space-y-5"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+              },
+            }}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
           >
-            <ul className="space-y-3 text-sm leading-7 text-muted">
-              {content.education.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            <p className="mt-6 font-mono text-xs uppercase tracking-[0.14em] text-muted">
-              {content.languagesSpoken.join(" · ")}
-            </p>
+            {content.education.map((item) => (
+              <RevealItem key={`${item.school}-${item.period}`}>
+                <div className="rounded-2xl border border-border bg-surface p-6">
+                  <p className="font-semibold text-foreground">{item.program}</p>
+                  <p className="mt-1 text-sm text-muted">
+                    {item.school} · {item.period}
+                  </p>
+                </div>
+              </RevealItem>
+            ))}
+            <RevealItem>
+              <p className="font-mono text-xs uppercase tracking-[0.14em] text-muted">
+                {content.languagesSpoken.join(" · ")}
+              </p>
+            </RevealItem>
           </motion.div>
         </SectionReveal>
         <SectionReveal

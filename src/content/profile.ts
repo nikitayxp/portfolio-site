@@ -14,6 +14,12 @@ export type ProjectItem = {
   link: string;
 };
 
+export type EducationItem = {
+  program: string;
+  school: string;
+  period: string;
+};
+
 export type ProfileContent = {
   name: string;
   title: string;
@@ -35,91 +41,139 @@ export type ProfileContent = {
     contact: string;
   };
   skills: {
-    supportAndHardware: string[];
     languages: string[];
-    webAndCloud: string[];
+    frontendAndMobile: string[];
+    backendAndCloud: string[];
     tools: string[];
-    design: string[];
+    systemsAndHardware: string[];
   };
   projects: ProjectItem[];
   experience: TimelineItem[];
-  education: string[];
+  education: EducationItem[];
   languagesSpoken: string[];
 };
 
 export const profileContent: Record<Locale, ProfileContent> = {
   pt: {
     name: "Nikita Slobodeniuc",
-    title: "Junior IT Technician & Aspiring Developer",
-    location: "Lisboa, Portugal",
+    title: "Desenvolvedor Full Stack",
+    location: "Loures, Lisboa, Portugal",
     email: "nikitayxp@gmail.com",
     phone: "+351 937 855 313",
     linkedin: "https://linkedin.com/in/nikita-slobodeniuc",
     github: "https://github.com/nikitayxp",
     resumeUrl: "/CV_Nikita_Slobodeniuc_PT.pdf",
     summary:
-      "Tecnico de IT junior com experiencia pratica em suporte tecnico, onboarding e configuracao de ambientes Windows. Neste momento a aprofundar desenvolvimento de software com foco em C#, SQL, Next.js e Supabase.",
+      "Desenvolvedor Full Stack com projetos em produção em Next.js, React Native e Supabase, e experiência prática de 600 horas em contexto empresarial (suporte técnico, administração de Windows e onboarding de equipamentos). Trabalho ponta a ponta: interface, lógica de negócio, base de dados e deploy. Formação em Desenvolvimento de Software no ISTEC e base técnica em Gestão e Programação de Sistemas Informáticos.",
     ctaPrimary: "Ver Projetos",
     ctaSecondary: "Falar Comigo",
     sections: {
       about: "Sobre Mim",
-      skills: "Competencias",
+      skills: "Competências",
       projects: "Projetos",
-      experience: "Experiencia",
-      education: "Educacao",
+      experience: "Experiência",
+      education: "Formação",
       contact: "Contacto",
     },
     skills: {
-      supportAndHardware: [
-        "Formatacao e manutencao de PCs",
-        "Onboarding e setup de novos colaboradores",
-        "Configuracao e troubleshooting de Windows",
+      languages: [
+        "JavaScript",
+        "TypeScript",
+        "C#",
+        "C++",
+        "Kotlin",
+        "SQL",
+        "HTML5",
+        "CSS3",
       ],
-      languages: ["C# (intermedio)", "SQL (intermedio)", "C++ (basico)", "JavaScript", "Kotlin"],
-      webAndCloud: ["Next.js", "Supabase", "Firebase", "Vercel", "HTML5", "CSS3"],
-      tools: ["Git & GitHub", "VS Code", "Microsoft 365"],
-      design: ["Canva (avancado)", "Photopea", "iMovie"],
+      frontendAndMobile: [
+        "React",
+        "React Native",
+        "Expo",
+        "Next.js (App Router)",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+      backendAndCloud: [
+        "Supabase (PostgreSQL, Auth, migrations SQL)",
+        "Firebase",
+        "Vercel",
+        "APIs REST",
+      ],
+      tools: [
+        "Git & GitHub",
+        "Monorepos",
+        "Autenticação OAuth",
+        "i18n (PT/EN)",
+        "Validação com Zod",
+        "Microsoft 365",
+      ],
+      systemsAndHardware: [
+        "Instalação e configuração de Windows",
+        "Manutenção e formatação de PCs",
+        "Diagnóstico de avarias",
+        "Onboarding de utilizadores",
+      ],
     },
     projects: [
       {
         name: "LyftTrack",
-        stack: ["Next.js", "Supabase", "Tailwind CSS"],
+        stack: ["React Native (Expo)", "Next.js", "TypeScript", "Supabase"],
         summary:
-          "Aplicacao web para registo e acompanhamento de treinos, com autenticacao, historico e visualizacao de progresso em interface responsiva.",
-        link: "https://lyfttrack-site.vercel.app",
+          "Aplicação de treino em monorepo com apps mobile/web (Expo Router) e landing em Next.js. Autenticação por email e Google, treinos ativos, templates, estatísticas, feed social e suporte offline básico com sincronização.",
+        link: "https://lyfttrack-app.vercel.app",
+      },
+      {
+        name: "Portfólio Pessoal Bilingue",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        summary:
+          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, formulário de contacto com Zod e Resend, rate limiting e Content Security Policies.",
+        link: "https://portfolio-nikita-slobodeniuc.vercel.app",
       },
     ],
     experience: [
       {
-        role: "Estagiario de Informatica",
+        role: "Estagiário de Informática",
         company: "Wellow Network, Lisboa",
-        period: "Mai 2025 - Jul 2025",
+        period: "Mai 2025 - Jul 2025 (estágio curricular)",
         highlights: [
-          "Formatacao e manutencao de dispositivos da empresa",
-          "Configuracao integral de PCs e ambientes Windows para onboarding",
-          "Instalacao de software empresarial e resolucao de incidencias",
+          "Suporte técnico a utilizadores, incluindo formatação e manutenção de dispositivos",
+          "Preparação e configuração integral de PCs e ambientes Windows para onboarding",
+          "Instalação de software corporativo e resolução de incidências técnicas",
         ],
       },
       {
-        role: "Estagiario de Informatica",
-        company: "Colegio Integrado Monte Maior, Lisboa",
-        period: "Mai 2024 - Jul 2024",
+        role: "Estagiário de Informática",
+        company: "Colégio Integrado Monte Maior, Lisboa",
+        period: "Mai 2024 - Jul 2024 (estágio curricular)",
         highlights: [
-          "Apoio na manutencao de equipamentos informaticos",
-          "Assistencia tecnica a professores e alunos",
-          "Suporte em edicao de video e imagem para projetos escolares",
+          "Manutenção preventiva e corretiva do parque informático da instituição",
+          "Assistência técnica direta a professores e alunos",
+          "Produção de conteúdos multimédia (iMovie, Canva, Photopea) para projeto institucional",
         ],
       },
     ],
     education: [
-      "CTeSP em Desenvolvimento de Software (em curso) - ISTEC Lisboa (2025 - Presente)",
-      "Curso Tecnico de Gestao e Programacao de Sistemas Informaticos - Escola Pedro Alexandrino (2022 - 2025)",
+      {
+        program: "CTeSP em Desenvolvimento de Software",
+        school: "ISTEC — Instituto Superior de Tecnologias Avançadas, Lisboa",
+        period: "2025 - 2027",
+      },
+      {
+        program: "Curso Profissional Técnico de Gestão e Programação de Sistemas Informáticos",
+        school: "Escola Secundária Pedro Alexandrino, Lisboa",
+        period: "2022 - 2025 (Concluído)",
+      },
     ],
-    languagesSpoken: ["Portugues (C2)", "Romeno (C2)", "Ingles (B1-B2)"],
+    languagesSpoken: [
+      "Português — Nativo (C2)",
+      "Romeno — Nativo (C2)",
+      "Inglês — Leitura C1, compreensão oral B2, expressão oral B1",
+    ],
   },
   en: {
     name: "Nikita Slobodeniuc",
-    title: "Junior IT Technician & Full-Stack Developer",
+    title: "Full Stack Developer",
     location: "Loures, Lisbon, Portugal",
     email: "nikitayxp@gmail.com",
     phone: "+351 937 855 313",
@@ -127,7 +181,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
     github: "https://github.com/nikitayxp",
     resumeUrl: "/CV_Nikita_Slobodeniuc_EN.pdf",
     summary:
-      "Junior IT technician with hands-on experience in technical support, onboarding and Windows environment setup. Currently deepening software development skills with a focus on C#, SQL, Next.js and Supabase.",
+      "Full Stack Developer with production projects in Next.js, React Native and Supabase, plus 600 hours of hands-on corporate experience in IT support, Windows administration and device onboarding. Comfortable working end to end: interface, business logic, database and deployment. Studying Software Development at ISTEC, with a technical background in IT Systems Management and Programming.",
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact Me",
     sections: {
@@ -139,51 +193,99 @@ export const profileContent: Record<Locale, ProfileContent> = {
       contact: "Contact",
     },
     skills: {
-      supportAndHardware: [
-        "PC formatting and maintenance",
-        "Onboarding and workstation setup",
-        "Windows configuration and troubleshooting",
+      languages: [
+        "JavaScript",
+        "TypeScript",
+        "C#",
+        "C++",
+        "Kotlin",
+        "SQL",
+        "HTML5",
+        "CSS3",
       ],
-      languages: ["C# (intermediate)", "SQL (intermediate)", "C++ (basic)", "JavaScript", "Kotlin"],
-      webAndCloud: ["Next.js", "Supabase", "Firebase", "Vercel", "HTML5", "CSS3"],
-      tools: ["Git & GitHub", "VS Code", "Microsoft 365"],
-      design: ["Canva (advanced)", "Photopea", "iMovie"],
+      frontendAndMobile: [
+        "React",
+        "React Native",
+        "Expo",
+        "Next.js (App Router)",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+      backendAndCloud: [
+        "Supabase (PostgreSQL, Auth, SQL migrations)",
+        "Firebase",
+        "Vercel",
+        "REST APIs",
+      ],
+      tools: [
+        "Git & GitHub",
+        "Monorepos",
+        "OAuth authentication",
+        "i18n (PT/EN)",
+        "Zod validation",
+        "Microsoft 365",
+      ],
+      systemsAndHardware: [
+        "Windows installation and configuration",
+        "PC maintenance and imaging",
+        "Hardware troubleshooting",
+        "User onboarding",
+      ],
     },
     projects: [
       {
         name: "LyftTrack",
-        stack: ["Next.js", "Supabase", "Tailwind CSS"],
+        stack: ["React Native (Expo)", "Next.js", "TypeScript", "Supabase"],
         summary:
-          "Web application for workout tracking with authentication, training history and progress visualization in a responsive interface.",
-        link: "https://lyfttrack-site.vercel.app",
+          "Workout tracking app in a monorepo: mobile/web client with Expo Router and a Next.js landing page. Email and Google auth, live workouts, routine templates, statistics, social feed and basic offline sync.",
+        link: "https://lyfttrack-app.vercel.app",
+      },
+      {
+        name: "Bilingual Personal Portfolio",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        summary:
+          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, contact form with Zod and Resend, rate limiting and Content Security Policies.",
+        link: "https://portfolio-nikita-slobodeniuc.vercel.app",
       },
     ],
     experience: [
       {
         role: "IT Intern",
         company: "Wellow Network, Lisbon",
-        period: "May 2025 - Jul 2025",
+        period: "May 2025 - Jul 2025 (curricular internship)",
         highlights: [
-          "Company device maintenance and formatting",
-          "Full Windows workstation setup for employee onboarding",
-          "Business software installation and incident resolution",
+          "Technical support for end users, including imaging and maintenance of company devices",
+          "Full PC and Windows environment setup for new employee onboarding",
+          "Corporate software installation and day-to-day incident resolution",
         ],
       },
       {
         role: "IT Intern",
-        company: "Colegio Integrado Monte Maior, Lisbon",
-        period: "May 2024 - Jul 2024",
+        company: "Colégio Integrado Monte Maior, Lisbon",
+        period: "May 2024 - Jul 2024 (curricular internship)",
         highlights: [
-          "Support for school computer maintenance",
-          "Direct technical assistance for teachers and students",
-          "Image and video editing support for school projects",
+          "Preventive and corrective maintenance of the school's IT equipment",
+          "Direct technical assistance to teachers and students",
+          "Multimedia content production (iMovie, Canva, Photopea) for an institutional project",
         ],
       },
     ],
     education: [
-      "Professional Higher Technical Program in Software Development (ongoing) - ISTEC Lisbon (2025 - Present)",
-      "Technical Program in Computer Systems Management and Programming - Escola Pedro Alexandrino (2022 - 2025)",
+      {
+        program: "Professional Higher Technical Diploma (CTeSP) in Software Development",
+        school: "ISTEC — Instituto Superior de Tecnologias Avançadas, Lisbon",
+        period: "2025 - 2027",
+      },
+      {
+        program: "Vocational Diploma in IT Systems Management and Programming",
+        school: "Escola Secundária Pedro Alexandrino, Lisbon",
+        period: "2022 - 2025 (Completed)",
+      },
     ],
-    languagesSpoken: ["Portuguese (C2)", "Romanian (C2)", "English (B1-B2)"],
+    languagesSpoken: [
+      "Portuguese — Native (C2)",
+      "Romanian — Native (C2)",
+      "English — Reading C1, listening B2, speaking B1",
+    ],
   },
 };
