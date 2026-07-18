@@ -56,14 +56,15 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
   const labels = {
     pt: {
       navAbout: "Sobre",
-      navSkills: "Competencias",
+      navSkills: "Competências",
       navProjects: "Projetos",
-      navExperience: "Experiencia",
+      navExperience: "Experiência",
       navContact: "Contacto",
       heroKicker: "Desenvolvedor Full Stack · ISTEC Lisboa",
-      openProject: "Abrir projeto",
+      viewGithub: "Ver no GitHub",
+      viewDemo: "Ver demo",
       downloadResume: "Download CV",
-      impactTag: "Projetos em produção, da interface ao deploy.",
+      impactTag: "Projetos pessoais e escolares em Next.js e React Native.",
       availability:
         "Disponível para oportunidades em desenvolvimento full-stack e colaborações freelance.",
       langSwitch: "Idioma",
@@ -75,9 +76,10 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navExperience: "Experience",
       navContact: "Contact",
       heroKicker: "Full Stack Developer · ISTEC Lisbon",
-      openProject: "Open project",
+      viewGithub: "View on GitHub",
+      viewDemo: "View demo",
       downloadResume: "Download Resume",
-      impactTag: "Production projects, from interface to deploy.",
+      impactTag: "Personal and school projects in Next.js and React Native.",
       availability:
         "Available for full-stack development opportunities and freelance collaborations.",
       langSwitch: "Language",
@@ -351,7 +353,7 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
             stagger={0.05}
           />
           <motion.div
-            className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
+            className="space-y-4"
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -365,18 +367,21 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
           >
             {skillGroups.map((group) => (
               <RevealItem key={group.label}>
-                <MouseGlowCard
-                  className="rounded-2xl border border-border bg-surface p-5 transition-shadow duration-300 hover:shadow-[0_8px_30px_-12px_rgba(37,99,235,0.2)]"
-                  hoverY={-5}
-                  tiltStrength={6}
-                >
-                  <h3 className="font-semibold text-foreground">{group.label}</h3>
-                  <ul className="mt-3 space-y-2 text-sm text-muted">
+                <div className="rounded-2xl border border-border bg-surface px-5 py-4 sm:px-6">
+                  <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-muted">
+                    {group.label}
+                  </h3>
+                  <ul className="mt-3 flex flex-wrap gap-2">
                     {group.items.map((item) => (
-                      <li key={item}>{item}</li>
+                      <li
+                        key={item}
+                        className="rounded-lg border border-border bg-background px-3 py-1.5 text-sm text-foreground"
+                      >
+                        {item}
+                      </li>
                     ))}
                   </ul>
-                </MouseGlowCard>
+                </div>
               </RevealItem>
             ))}
           </motion.div>
@@ -417,23 +422,32 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                   <p className="mt-4 font-mono text-xs uppercase tracking-[0.12em] text-muted">
                     {project.stack.join(" · ")}
                   </p>
-                  <MagneticButton
-                    as="a"
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
-                    strength={0.25}
-                  >
-                    {labels.openProject}
-                    <motion.span
-                      className="inline-block"
-                      animate={prefersReducedMotion ? {} : { x: [0, 3, 0], y: [0, -3, 0] }}
-                      transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 2 }}
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <MagneticButton
+                      as="a"
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
+                      strength={0.25}
                     >
+                      {labels.viewGithub}
                       <ArrowUpRight size={14} />
-                    </motion.span>
-                  </MagneticButton>
+                    </MagneticButton>
+                    {project.demoUrl ? (
+                      <MagneticButton
+                        as="a"
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                        strength={0.25}
+                      >
+                        {labels.viewDemo}
+                        <ArrowUpRight size={14} />
+                      </MagneticButton>
+                    ) : null}
+                  </div>
                 </MouseGlowCard>
               </RevealItem>
             ))}
