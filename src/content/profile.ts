@@ -11,7 +11,8 @@ export type ProjectItem = {
   name: string;
   stack: string[];
   summary: string;
-  link: string;
+  githubUrl: string;
+  demoUrl?: string;
 };
 
 export type EducationItem = {
@@ -64,7 +65,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
     github: "https://github.com/nikitayxp",
     resumeUrl: "/CV_Nikita_Slobodeniuc_PT.pdf",
     summary:
-      "Desenvolvedor Full Stack com projetos em produção em Next.js, React Native e Supabase, e experiência prática de 600 horas em contexto empresarial (suporte técnico, administração de Windows e onboarding de equipamentos). Trabalho ponta a ponta: interface, lógica de negócio, base de dados e deploy. Formação em Desenvolvimento de Software no ISTEC e base técnica em Gestão e Programação de Sistemas Informáticos.",
+      "Desenvolvedor Full Stack com projetos em Next.js, React Native e Supabase, e experiência prática de 600 horas em contexto empresarial (suporte técnico, administração de Windows e onboarding de equipamentos). Trabalho ponta a ponta: interface, lógica de negócio, base de dados e deploy. Formação em Desenvolvimento de Software no ISTEC e base técnica em Gestão e Programação de Sistemas Informáticos.",
     ctaPrimary: "Ver Projetos",
     ctaSecondary: "Falar Comigo",
     sections: {
@@ -121,14 +122,15 @@ export const profileContent: Record<Locale, ProfileContent> = {
         stack: ["React Native (Expo)", "Next.js", "TypeScript", "Supabase"],
         summary:
           "Aplicação de treino em monorepo com apps mobile/web (Expo Router) e landing em Next.js. Autenticação por email e Google, treinos ativos, templates, estatísticas, feed social e suporte offline básico com sincronização.",
-        link: "https://lyfttrack-app.vercel.app",
+        githubUrl: "https://github.com/nikitayxp/lyfttrack",
+        demoUrl: "https://lyfttrack-app.vercel.app",
       },
       {
         name: "Portfólio Pessoal Bilingue",
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         summary:
           "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, formulário de contacto com Zod e Resend, rate limiting e Content Security Policies.",
-        link: "https://portfolio-nikita-slobodeniuc.vercel.app",
+        githubUrl: "https://github.com/nikitayxp/portfolio-site",
       },
     ],
     experience: [
@@ -181,7 +183,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
     github: "https://github.com/nikitayxp",
     resumeUrl: "/CV_Nikita_Slobodeniuc_EN.pdf",
     summary:
-      "Full Stack Developer with production projects in Next.js, React Native and Supabase, plus 600 hours of hands-on corporate experience in IT support, Windows administration and device onboarding. Comfortable working end to end: interface, business logic, database and deployment. Studying Software Development at ISTEC, with a technical background in IT Systems Management and Programming.",
+      "Full Stack Developer with projects in Next.js, React Native and Supabase, plus 600 hours of hands-on corporate experience in IT support, Windows administration and device onboarding. Comfortable working end to end: interface, business logic, database and deployment. Studying Software Development at ISTEC, with a technical background in IT Systems Management and Programming.",
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact Me",
     sections: {
@@ -238,14 +240,15 @@ export const profileContent: Record<Locale, ProfileContent> = {
         stack: ["React Native (Expo)", "Next.js", "TypeScript", "Supabase"],
         summary:
           "Workout tracking app in a monorepo: mobile/web client with Expo Router and a Next.js landing page. Email and Google auth, live workouts, routine templates, statistics, social feed and basic offline sync.",
-        link: "https://lyfttrack-app.vercel.app",
+        githubUrl: "https://github.com/nikitayxp/lyfttrack",
+        demoUrl: "https://lyfttrack-app.vercel.app",
       },
       {
         name: "Bilingual Personal Portfolio",
         stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         summary:
           "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, contact form with Zod and Resend, rate limiting and Content Security Policies.",
-        link: "https://portfolio-nikita-slobodeniuc.vercel.app",
+        githubUrl: "https://github.com/nikitayxp/portfolio-site",
       },
     ],
     experience: [

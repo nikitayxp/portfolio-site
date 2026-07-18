@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Nikita Slobodeniuc",
   },
   description:
-    "Full Stack Developer portfolio — Next.js, React Native, Supabase and production-ready web apps.",
+    "Full Stack Developer portfolio — Next.js, React Native, Supabase and modern web apps.",
   metadataBase: new URL("https://portfolio-nikita-slobodeniuc.vercel.app"),
   alternates: {
     languages: {
