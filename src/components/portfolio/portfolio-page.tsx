@@ -11,6 +11,7 @@ import { AnimatedText } from "@/components/ui/animated-text";
 import { SectionReveal, RevealItem } from "@/components/ui/section-reveal";
 import { ParallaxOrbs } from "@/components/ui/parallax-orbs";
 import { AnimatedNav, AnimatedNavMobile } from "@/components/ui/animated-nav";
+import { GlowCard } from "@/components/ui/spotlight-card";
 import { ContactForm } from "@/components/portfolio/contact-form";
 import { profileContent } from "@/content/profile";
 import type { AppLocale } from "@/lib/i18n";
@@ -369,7 +370,11 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
           >
             {skillGroups.map((group) => (
               <RevealItem key={group.label}>
-                <div className="rounded-2xl border border-border bg-surface px-5 py-4 sm:px-6">
+                <GlowCard
+                  customSize
+                  glowColor="blue"
+                  className="rounded-2xl border border-border bg-surface px-5 py-4 sm:px-6"
+                >
                   <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-muted">
                     {group.label}
                   </h3>
@@ -383,7 +388,7 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                       </li>
                     ))}
                   </ul>
-                </div>
+                </GlowCard>
               </RevealItem>
             ))}
           </motion.div>
