@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   description:
     "Full Stack Developer portfolio — Next.js, React Native, Supabase and modern web apps.",
-  metadataBase: new URL("https://portfolio-nikita-slobodeniuc.vercel.app"),
+  metadataBase: new URL("https://nikitayxp.is-a.dev"),
   alternates: {
     languages: {
       pt: "/pt",

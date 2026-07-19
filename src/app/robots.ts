@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://portfolio-nikita-slobodeniuc.vercel.app/sitemap.xml",
+    sitemap: "https://nikitayxp.is-a.dev/sitemap.xml",
   };
 }

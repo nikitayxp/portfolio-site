@@ -133,6 +133,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
         summary:
           "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, formulário de contacto com Zod e Resend, rate limiting e Content Security Policies.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
+        siteUrl: "https://nikitayxp.is-a.dev",
       },
     ],
     experience: [
@@ -252,6 +253,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
         summary:
           "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, contact form with Zod and Resend, rate limiting and Content Security Policies.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
+        siteUrl: "https://nikitayxp.is-a.dev",
       },
     ],
     experience: [
