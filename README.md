@@ -19,26 +19,6 @@ Sou estudante de Desenvolvimento de Software
 - Framer Motion + Lenis
 - Zod + Resend
 
-## Como correr localmente
-
-```bash
-git clone https://github.com/nikitayxp/portfolio-site.git
-cd portfolio-site
-npm install
-```
-
-Cria um ficheiro `.env.local` na raiz:
-
-```env
-RESEND_API_KEY=re_tua_chave_aqui
-```
-
-```bash
-npm run dev
-```
-
-Abre [http://localhost:3000](http://localhost:3000).
-
 ## Estrutura
 
 ```

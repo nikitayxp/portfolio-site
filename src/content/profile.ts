@@ -12,7 +12,8 @@ export type ProjectItem = {
   stack: string[];
   summary: string;
   githubUrl: string;
-  demoUrl?: string;
+  siteUrl?: string;
+  appUrl?: string;
 };
 
 export type EducationItem = {
@@ -123,7 +124,8 @@ export const profileContent: Record<Locale, ProfileContent> = {
         summary:
           "Aplicação de treino em monorepo com apps mobile/web (Expo Router) e landing em Next.js. Autenticação por email e Google, treinos ativos, templates, estatísticas, feed social e suporte offline básico com sincronização.",
         githubUrl: "https://github.com/nikitayxp/lyfttrack",
-        demoUrl: "https://lyfttrack-app.vercel.app",
+        siteUrl: "https://lyfttrack-site.vercel.app",
+        appUrl: "https://lyfttrack-app.vercel.app",
       },
       {
         name: "Portfólio Pessoal Bilingue",
@@ -241,7 +243,8 @@ export const profileContent: Record<Locale, ProfileContent> = {
         summary:
           "Workout tracking app in a monorepo: mobile/web client with Expo Router and a Next.js landing page. Email and Google auth, live workouts, routine templates, statistics, social feed and basic offline sync.",
         githubUrl: "https://github.com/nikitayxp/lyfttrack",
-        demoUrl: "https://lyfttrack-app.vercel.app",
+        siteUrl: "https://lyfttrack-site.vercel.app",
+        appUrl: "https://lyfttrack-app.vercel.app",
       },
       {
         name: "Bilingual Personal Portfolio",

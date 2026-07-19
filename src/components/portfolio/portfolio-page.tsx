@@ -62,7 +62,8 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navContact: "Contacto",
       heroKicker: "Desenvolvedor Full Stack · ISTEC Lisboa",
       viewGithub: "Ver no GitHub",
-      viewDemo: "Ver demo",
+      viewSite: "Ver site",
+      viewApp: "Ver app",
       downloadResume: "Download CV",
       impactTag: "Projetos pessoais e escolares em Next.js e React Native.",
       availability:
@@ -77,7 +78,8 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navContact: "Contact",
       heroKicker: "Full Stack Developer · ISTEC Lisbon",
       viewGithub: "View on GitHub",
-      viewDemo: "View demo",
+      viewSite: "View site",
+      viewApp: "View app",
       downloadResume: "Download Resume",
       impactTag: "Personal and school projects in Next.js and React Native.",
       availability:
@@ -434,16 +436,29 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                       {labels.viewGithub}
                       <ArrowUpRight size={14} />
                     </MagneticButton>
-                    {project.demoUrl ? (
+                    {project.siteUrl ? (
                       <MagneticButton
                         as="a"
-                        href={project.demoUrl}
+                        href={project.siteUrl}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
                         strength={0.25}
                       >
-                        {labels.viewDemo}
+                        {labels.viewSite}
+                        <ArrowUpRight size={14} />
+                      </MagneticButton>
+                    ) : null}
+                    {project.appUrl ? (
+                      <MagneticButton
+                        as="a"
+                        href={project.appUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                        strength={0.25}
+                      >
+                        {labels.viewApp}
                         <ArrowUpRight size={14} />
                       </MagneticButton>
                     ) : null}
