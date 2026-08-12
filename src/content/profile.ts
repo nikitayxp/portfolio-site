@@ -12,6 +12,7 @@ export type ProjectItem = {
   stack: string[];
   summary: string;
   githubUrl: string;
+  githubLabel?: string;
   siteUrl?: string;
   appUrl?: string;
 };
@@ -127,18 +128,18 @@ export const profileContent: Record<Locale, ProfileContent> = {
         appUrl: "https://lyfttrack-app.vercel.app",
       },
       {
-        name: "Portfólio Pessoal Bilingue",
+        name: "Este Portefólio",
         stack: [
-          "Next.js",
-          "React",
+          "Next.js 16",
+          "React 19",
           "TypeScript",
-          "Tailwind CSS",
+          "Tailwind CSS 4",
           "Framer Motion",
         ],
         summary:
-          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, contacto direto através do Gmail e Content Security Policies.",
+          "Site pessoal bilingue para apresentar projetos, experiência e competências, com animações acessíveis, temas claro/escuro e contacto direto através do Gmail.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
-        siteUrl: "https://nikitayxp.is-a.dev",
+        githubLabel: "Ver código",
       },
     ],
     experience: [
@@ -253,18 +254,18 @@ export const profileContent: Record<Locale, ProfileContent> = {
         appUrl: "https://lyfttrack-app.vercel.app",
       },
       {
-        name: "Bilingual Personal Portfolio",
+        name: "This Portfolio",
         stack: [
-          "Next.js",
-          "React",
+          "Next.js 16",
+          "React 19",
           "TypeScript",
-          "Tailwind CSS",
+          "Tailwind CSS 4",
           "Framer Motion",
         ],
         summary:
-          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, direct contact through Gmail and Content Security Policies.",
+          "Bilingual personal site for presenting projects, experience and skills, with accessible animations, light and dark themes, and direct contact through Gmail.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
-        siteUrl: "https://nikitayxp.is-a.dev",
+        githubLabel: "View source",
       },
     ],
     experience: [

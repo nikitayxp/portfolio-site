@@ -464,7 +464,7 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
                       strength={0.25}
                     >
-                      {labels.viewGithub}
+                      {project.githubLabel ?? labels.viewGithub}
                       <ArrowUpRight size={14} />
                     </MagneticButton>
                     {project.siteUrl ? (
