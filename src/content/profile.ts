@@ -107,7 +107,6 @@ export const profileContent: Record<Locale, ProfileContent> = {
         "Monorepos",
         "Autenticação OAuth",
         "i18n (PT/EN)",
-        "Validação com Zod",
         "Microsoft 365",
       ],
       systemsAndHardware: [
@@ -129,9 +128,15 @@ export const profileContent: Record<Locale, ProfileContent> = {
       },
       {
         name: "Portfólio Pessoal Bilingue",
-        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+        ],
         summary:
-          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, formulário de contacto com Zod e Resend, rate limiting e Content Security Policies.",
+          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, contacto direto por email e Content Security Policies.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
         siteUrl: "https://nikitayxp.is-a.dev",
       },
@@ -165,7 +170,8 @@ export const profileContent: Record<Locale, ProfileContent> = {
         period: "2025 - 2027",
       },
       {
-        program: "Curso Profissional Técnico de Gestão e Programação de Sistemas Informáticos",
+        program:
+          "Curso Profissional Técnico de Gestão e Programação de Sistemas Informáticos",
         school: "Escola Secundária Pedro Alexandrino, Lisboa",
         period: "2022 - 2025 (Concluído)",
       },
@@ -227,7 +233,6 @@ export const profileContent: Record<Locale, ProfileContent> = {
         "Monorepos",
         "OAuth authentication",
         "i18n (PT/EN)",
-        "Zod validation",
         "Microsoft 365",
       ],
       systemsAndHardware: [
@@ -249,9 +254,15 @@ export const profileContent: Record<Locale, ProfileContent> = {
       },
       {
         name: "Bilingual Personal Portfolio",
-        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion",
+        ],
         summary:
-          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, contact form with Zod and Resend, rate limiting and Content Security Policies.",
+          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, direct email contact and Content Security Policies.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
         siteUrl: "https://nikitayxp.is-a.dev",
       },
@@ -280,7 +291,8 @@ export const profileContent: Record<Locale, ProfileContent> = {
     ],
     education: [
       {
-        program: "Professional Higher Technical Diploma (CTeSP) in Software Development",
+        program:
+          "Professional Higher Technical Diploma (CTeSP) in Software Development",
         school: "ISTEC — Instituto Superior de Tecnologias Avançadas, Lisbon",
         period: "2025 - 2027",
       },
