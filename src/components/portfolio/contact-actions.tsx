@@ -60,7 +60,9 @@ export function ContactActions({ email, locale }: ContactActionsProps) {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <MagneticButton
           as="a"
-          href={`mailto:${email}`}
+          href={`https://mail.google.com/mail/?view=cm&to=${encodeURIComponent(email)}`}
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-brand px-6 text-sm font-semibold text-white transition-all hover:bg-accent hover:shadow-[0_8px_30px_-6px_rgba(37,99,235,0.45)]"
           strength={0.2}
         >
@@ -74,7 +76,11 @@ export function ContactActions({ email, locale }: ContactActionsProps) {
           className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-zinc-700 bg-zinc-950/40 px-6 text-sm font-semibold text-zinc-200 transition-colors hover:bg-zinc-800"
           strength={0.2}
         >
-          {copied ? <Check size={18} aria-hidden="true" /> : <Copy size={18} aria-hidden="true" />}
+          {copied ? (
+            <Check size={18} aria-hidden="true" />
+          ) : (
+            <Copy size={18} aria-hidden="true" />
+          )}
           {copied ? content.copied : content.copy}
         </MagneticButton>
       </div>

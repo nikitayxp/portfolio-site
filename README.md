@@ -9,7 +9,7 @@ Sou estudante de Desenvolvimento de Software
 - Páginas em português e inglês
 - Dark / light mode
 - Animações com Framer Motion
-- Contacto direto por email
+- Contacto direto através do Gmail
 - Botão para copiar o endereço de email
 
 ## Stack
@@ -17,7 +17,7 @@ Sou estudante de Desenvolvimento de Software
 - Next.js (App Router) + React + TypeScript
 - Tailwind CSS
 - Framer Motion + Lenis
-- Link direto de email + Clipboard API
+- Gmail compose + Clipboard API
 
 ## Estrutura
 

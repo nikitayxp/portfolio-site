@@ -74,7 +74,6 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       impactTag: "Projetos pessoais e escolares publicados online.",
       availability:
         "Disponível para oportunidades em desenvolvimento full-stack e colaborações freelance.",
-      langSwitch: "Idioma",
     },
     en: {
       navAbout: "About",
@@ -90,7 +89,6 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       impactTag: "Personal and school projects published online.",
       availability:
         "Available for full-stack development opportunities and freelance collaborations.",
-      langSwitch: "Language",
     },
   }[locale];
 
@@ -171,7 +169,6 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, ease: EASE_EXPO, delay: 0.3 }}
             >
-              <span className="hidden px-1 sm:inline">{labels.langSwitch}</span>
               <Link
                 href="/pt"
                 data-cursor-hover

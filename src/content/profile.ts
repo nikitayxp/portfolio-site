@@ -136,7 +136,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
           "Framer Motion",
         ],
         summary:
-          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, contacto direto por email e Content Security Policies.",
+          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, contacto direto através do Gmail e Content Security Policies.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
         siteUrl: "https://nikitayxp.is-a.dev",
       },
@@ -262,7 +262,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
           "Framer Motion",
         ],
         summary:
-          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, direct email contact and Content Security Policies.",
+          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, direct contact through Gmail and Content Security Policies.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
         siteUrl: "https://nikitayxp.is-a.dev",
       },
