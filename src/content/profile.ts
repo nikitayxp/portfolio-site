@@ -12,6 +12,7 @@ export type ProjectItem = {
   stack: string[];
   summary: string;
   githubUrl: string;
+  githubLabel?: string;
   siteUrl?: string;
   appUrl?: string;
 };
@@ -107,7 +108,6 @@ export const profileContent: Record<Locale, ProfileContent> = {
         "Monorepos",
         "Autenticação OAuth",
         "i18n (PT/EN)",
-        "Validação com Zod",
         "Microsoft 365",
       ],
       systemsAndHardware: [
@@ -128,12 +128,18 @@ export const profileContent: Record<Locale, ProfileContent> = {
         appUrl: "https://lyfttrack-app.vercel.app",
       },
       {
-        name: "Portfólio Pessoal Bilingue",
-        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        name: "Este Portefólio",
+        stack: [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Framer Motion",
+        ],
         summary:
-          "Portfólio bilingue (PT/EN) com smooth scrolling, animações, dark mode na primeira pintura, formulário de contacto com Zod e Resend, rate limiting e Content Security Policies.",
+          "Site pessoal bilingue para apresentar projetos, experiência e competências, com animações acessíveis, temas claro/escuro e contacto direto através do Gmail.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
-        siteUrl: "https://nikitayxp.is-a.dev",
+        githubLabel: "Ver código",
       },
     ],
     experience: [
@@ -165,7 +171,8 @@ export const profileContent: Record<Locale, ProfileContent> = {
         period: "2025 - 2027",
       },
       {
-        program: "Curso Profissional Técnico de Gestão e Programação de Sistemas Informáticos",
+        program:
+          "Curso Profissional Técnico de Gestão e Programação de Sistemas Informáticos",
         school: "Escola Secundária Pedro Alexandrino, Lisboa",
         period: "2022 - 2025 (Concluído)",
       },
@@ -227,7 +234,6 @@ export const profileContent: Record<Locale, ProfileContent> = {
         "Monorepos",
         "OAuth authentication",
         "i18n (PT/EN)",
-        "Zod validation",
         "Microsoft 365",
       ],
       systemsAndHardware: [
@@ -248,12 +254,18 @@ export const profileContent: Record<Locale, ProfileContent> = {
         appUrl: "https://lyfttrack-app.vercel.app",
       },
       {
-        name: "Bilingual Personal Portfolio",
-        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+        name: "This Portfolio",
+        stack: [
+          "Next.js 16",
+          "React 19",
+          "TypeScript",
+          "Tailwind CSS 4",
+          "Framer Motion",
+        ],
         summary:
-          "Bilingual (PT/EN) portfolio with smooth scrolling, scroll animations, dark mode on first paint, contact form with Zod and Resend, rate limiting and Content Security Policies.",
+          "Bilingual personal site for presenting projects, experience and skills, with accessible animations, light and dark themes, and direct contact through Gmail.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
-        siteUrl: "https://nikitayxp.is-a.dev",
+        githubLabel: "View source",
       },
     ],
     experience: [
@@ -280,7 +292,8 @@ export const profileContent: Record<Locale, ProfileContent> = {
     ],
     education: [
       {
-        program: "Professional Higher Technical Diploma (CTeSP) in Software Development",
+        program:
+          "Professional Higher Technical Diploma (CTeSP) in Software Development",
         school: "ISTEC — Instituto Superior de Tecnologias Avançadas, Lisbon",
         period: "2025 - 2027",
       },

@@ -3,7 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 import { MouseGlowCard } from "@/components/ui/mouse-glow-card";
 import { MagneticButton } from "@/components/ui/magnetic-button";
@@ -12,7 +17,7 @@ import { SectionReveal, RevealItem } from "@/components/ui/section-reveal";
 import { ParallaxOrbs } from "@/components/ui/parallax-orbs";
 import { AnimatedNav, AnimatedNavMobile } from "@/components/ui/animated-nav";
 import { GlowCard } from "@/components/ui/spotlight-card";
-import { ContactForm } from "@/components/portfolio/contact-form";
+import { ContactActions } from "@/components/portfolio/contact-actions";
 import { profileContent } from "@/content/profile";
 import type { AppLocale } from "@/lib/i18n";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -66,10 +71,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       viewSite: "Ver site",
       viewApp: "Ver app",
       downloadResume: "Download CV",
-      impactTag: "Projetos pessoais e escolares em Next.js e React Native.",
+      impactTag: "Projetos pessoais e escolares publicados online.",
       availability:
         "Disponível para oportunidades em desenvolvimento full-stack e colaborações freelance.",
-      langSwitch: "Idioma",
     },
     en: {
       navAbout: "About",
@@ -82,10 +86,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       viewSite: "View site",
       viewApp: "View app",
       downloadResume: "Download Resume",
-      impactTag: "Personal and school projects in Next.js and React Native.",
+      impactTag: "Personal and school projects published online.",
       availability:
         "Available for full-stack development opportunities and freelance collaborations.",
-      langSwitch: "Language",
     },
   }[locale];
 
@@ -136,7 +139,11 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
         transition={{ duration: 0.6, ease: EASE_EXPO, delay: 0.05 }}
       >
         <div className="mx-auto flex w-full max-w-6xl items-center gap-3 px-4 py-3 sm:px-6 md:px-10">
-          <Link href={`/${locale}`} className="shrink-0 font-display text-xl tracking-tight" data-cursor-hover>
+          <Link
+            href={`/${locale}`}
+            className="shrink-0 font-display text-xl tracking-tight"
+            data-cursor-hover
+          >
             <motion.span
               initial={prefersReducedMotion ? false : { opacity: 0, x: -12 }}
               animate={{ opacity: 1, x: 0 }}
@@ -156,16 +163,19 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
           <div className="ml-auto flex items-center gap-2">
             <motion.div
               className="flex items-center gap-1 rounded-full border border-border bg-surface px-1.5 py-1 text-[11px] font-semibold text-muted sm:text-xs"
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.9 }}
+              initial={
+                prefersReducedMotion ? false : { opacity: 0, scale: 0.9 }
+              }
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, ease: EASE_EXPO, delay: 0.3 }}
             >
-              <span className="hidden px-1 sm:inline">{labels.langSwitch}</span>
               <Link
                 href="/pt"
                 data-cursor-hover
                 className={`rounded-full px-2.5 py-1 transition-all duration-200 hover:scale-105 ${
-                  locale === "pt" ? "bg-brand text-white shadow-[0_2px_8px_rgba(37,99,235,0.35)]" : "hover:bg-brand-soft"
+                  locale === "pt"
+                    ? "bg-brand text-white shadow-[0_2px_8px_rgba(37,99,235,0.35)]"
+                    : "hover:bg-brand-soft"
                 }`}
               >
                 PT
@@ -174,7 +184,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                 href="/en"
                 data-cursor-hover
                 className={`rounded-full px-2.5 py-1 transition-all duration-200 hover:scale-105 ${
-                  locale === "en" ? "bg-brand text-white shadow-[0_2px_8px_rgba(37,99,235,0.35)]" : "hover:bg-brand-soft"
+                  locale === "en"
+                    ? "bg-brand text-white shadow-[0_2px_8px_rgba(37,99,235,0.35)]"
+                    : "hover:bg-brand-soft"
                 }`}
               >
                 EN
@@ -200,7 +212,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
         <motion.section
           ref={heroRef}
           className="rounded-3xl border border-border bg-surface/95 px-6 py-10 shadow-[0_30px_80px_-40px_rgba(15,23,42,0.35)] sm:px-10 sm:py-14"
-          initial={prefersReducedMotion ? false : { opacity: 0, y: 30, scale: 0.99 }}
+          initial={
+            prefersReducedMotion ? false : { opacity: 0, y: 30, scale: 0.99 }
+          }
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.7, ease: EASE_EXPO }}
         >
@@ -244,7 +258,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                 animate="visible"
               >
                 <motion.span
-                  animate={prefersReducedMotion ? {} : { rotate: [0, 15, -15, 0] }}
+                  animate={
+                    prefersReducedMotion ? {} : { rotate: [0, 15, -15, 0] }
+                  }
                   transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 >
                   <Sparkles size={14} />
@@ -284,7 +300,11 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
               </motion.p>
             </div>
             <motion.div
-              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.88, y: 20 }}
+              initial={
+                prefersReducedMotion
+                  ? false
+                  : { opacity: 0, scale: 0.88, y: 20 }
+              }
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: EASE_EXPO }}
               style={
@@ -307,7 +327,11 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                         scale: [0.98, 1.02, 0.98],
                       }
                 }
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
               />
               <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-border bg-surface p-2">
                 <Image
@@ -418,55 +442,59 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
             viewport={{ once: true, amount: 0.1 }}
           >
             {content.projects.map((project) => (
-              <RevealItem key={project.name}>
+              <RevealItem key={project.name} className="h-full">
                 <MouseGlowCard
-                  className="rounded-2xl border border-border bg-surface p-6 transition-shadow duration-300 hover:shadow-[0_12px_40px_-12px_rgba(37,99,235,0.2)]"
+                  className="h-full rounded-2xl border border-border bg-surface p-6 transition-shadow duration-300 hover:shadow-[0_12px_40px_-12px_rgba(37,99,235,0.2)]"
                   hoverY={-5}
                   tiltStrength={8}
                 >
-                  <h3 className="font-display text-2xl">{project.name}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted">{project.summary}</p>
-                  <p className="mt-4 font-mono text-xs uppercase tracking-[0.12em] text-muted">
-                    {project.stack.join(" · ")}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    <MagneticButton
-                      as="a"
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
-                      strength={0.25}
-                    >
-                      {labels.viewGithub}
-                      <ArrowUpRight size={14} />
-                    </MagneticButton>
-                    {project.siteUrl ? (
+                  <div className="flex h-full flex-col">
+                    <h3 className="font-display text-2xl">{project.name}</h3>
+                    <p className="mt-3 text-sm leading-7 text-muted">
+                      {project.summary}
+                    </p>
+                    <p className="mt-4 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                      {project.stack.join(" · ")}
+                    </p>
+                    <div className="mt-auto flex flex-wrap gap-3 pt-5">
                       <MagneticButton
                         as="a"
-                        href={project.siteUrl}
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
                         strength={0.25}
                       >
-                        {labels.viewSite}
+                        {project.githubLabel ?? labels.viewGithub}
                         <ArrowUpRight size={14} />
                       </MagneticButton>
-                    ) : null}
-                    {project.appUrl ? (
-                      <MagneticButton
-                        as="a"
-                        href={project.appUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
-                        strength={0.25}
-                      >
-                        {labels.viewApp}
-                        <ArrowUpRight size={14} />
-                      </MagneticButton>
-                    ) : null}
+                      {project.siteUrl ? (
+                        <MagneticButton
+                          as="a"
+                          href={project.siteUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                          strength={0.25}
+                        >
+                          {labels.viewSite}
+                          <ArrowUpRight size={14} />
+                        </MagneticButton>
+                      ) : null}
+                      {project.appUrl ? (
+                        <MagneticButton
+                          as="a"
+                          href={project.appUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                          strength={0.25}
+                        >
+                          {labels.viewApp}
+                          <ArrowUpRight size={14} />
+                        </MagneticButton>
+                      ) : null}
+                    </div>
                   </div>
                 </MouseGlowCard>
               </RevealItem>
@@ -560,7 +588,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                   hoverY={-3}
                   tiltStrength={5}
                 >
-                  <p className="font-semibold text-foreground">{item.program}</p>
+                  <p className="font-semibold text-foreground">
+                    {item.program}
+                  </p>
                   <p className="mt-1 text-sm text-muted">
                     {item.school} · {item.period}
                   </p>
@@ -607,7 +637,7 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <ContactForm />
+              <ContactActions email={content.email} locale={locale} />
             </motion.div>
 
             <motion.div

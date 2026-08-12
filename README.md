@@ -9,15 +9,15 @@ Sou estudante de Desenvolvimento de Software
 - Páginas em português e inglês
 - Dark / light mode
 - Animações com Framer Motion
-- Formulário de contacto com validação (Zod) e envio por email (Resend)
-- Proteção básica contra spam (rate limit simples)
+- Contacto direto através do Gmail
+- Botão para copiar o endereço de email
 
 ## Stack
 
 - Next.js (App Router) + React + TypeScript
 - Tailwind CSS
 - Framer Motion + Lenis
-- Zod + Resend
+- Gmail compose + Clipboard API
 
 ## Estrutura
 
@@ -32,4 +32,4 @@ public/          # CVs e foto de perfil
 
 ## Notas
 
-Este projeto foi feito como prática de estudo. Algumas partes (animações, formulário) foram onde foquei mais tempo. Feedback é bem-vindo.
+Este projeto foi feito como prática de estudo. As animações e a experiência bilingue foram onde foquei mais tempo. Feedback é bem-vindo.
