@@ -442,57 +442,59 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
             viewport={{ once: true, amount: 0.1 }}
           >
             {content.projects.map((project) => (
-              <RevealItem key={project.name}>
+              <RevealItem key={project.name} className="h-full">
                 <MouseGlowCard
-                  className="rounded-2xl border border-border bg-surface p-6 transition-shadow duration-300 hover:shadow-[0_12px_40px_-12px_rgba(37,99,235,0.2)]"
+                  className="h-full rounded-2xl border border-border bg-surface p-6 transition-shadow duration-300 hover:shadow-[0_12px_40px_-12px_rgba(37,99,235,0.2)]"
                   hoverY={-5}
                   tiltStrength={8}
                 >
-                  <h3 className="font-display text-2xl">{project.name}</h3>
-                  <p className="mt-3 text-sm leading-7 text-muted">
-                    {project.summary}
-                  </p>
-                  <p className="mt-4 font-mono text-xs uppercase tracking-[0.12em] text-muted">
-                    {project.stack.join(" · ")}
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-3">
-                    <MagneticButton
-                      as="a"
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
-                      strength={0.25}
-                    >
-                      {project.githubLabel ?? labels.viewGithub}
-                      <ArrowUpRight size={14} />
-                    </MagneticButton>
-                    {project.siteUrl ? (
+                  <div className="flex h-full flex-col">
+                    <h3 className="font-display text-2xl">{project.name}</h3>
+                    <p className="mt-3 text-sm leading-7 text-muted">
+                      {project.summary}
+                    </p>
+                    <p className="mt-4 font-mono text-xs uppercase tracking-[0.12em] text-muted">
+                      {project.stack.join(" · ")}
+                    </p>
+                    <div className="mt-auto flex flex-wrap gap-3 pt-5">
                       <MagneticButton
                         as="a"
-                        href={project.siteUrl}
+                        href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-accent"
                         strength={0.25}
                       >
-                        {labels.viewSite}
+                        {project.githubLabel ?? labels.viewGithub}
                         <ArrowUpRight size={14} />
                       </MagneticButton>
-                    ) : null}
-                    {project.appUrl ? (
-                      <MagneticButton
-                        as="a"
-                        href={project.appUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
-                        strength={0.25}
-                      >
-                        {labels.viewApp}
-                        <ArrowUpRight size={14} />
-                      </MagneticButton>
-                    ) : null}
+                      {project.siteUrl ? (
+                        <MagneticButton
+                          as="a"
+                          href={project.siteUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                          strength={0.25}
+                        >
+                          {labels.viewSite}
+                          <ArrowUpRight size={14} />
+                        </MagneticButton>
+                      ) : null}
+                      {project.appUrl ? (
+                        <MagneticButton
+                          as="a"
+                          href={project.appUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted transition-colors hover:text-brand"
+                          strength={0.25}
+                        >
+                          {labels.viewApp}
+                          <ArrowUpRight size={14} />
+                        </MagneticButton>
+                      ) : null}
+                    </div>
                   </div>
                 </MouseGlowCard>
               </RevealItem>
