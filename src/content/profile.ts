@@ -33,6 +33,7 @@ export type ProfileContent = {
   github: string;
   resumeUrl: string;
   summary: string;
+  about: string[];
   ctaPrimary: string;
   ctaSecondary: string;
   sections: {
@@ -44,11 +45,9 @@ export type ProfileContent = {
     contact: string;
   };
   skills: {
-    languages: string[];
-    frontendAndMobile: string[];
-    backendAndCloud: string[];
-    tools: string[];
-    systemsAndHardware: string[];
+    support: string[];
+    development: string[];
+    projectTechnologies: string[];
   };
   projects: ProjectItem[];
   experience: TimelineItem[];
@@ -59,7 +58,7 @@ export type ProfileContent = {
 export const profileContent: Record<Locale, ProfileContent> = {
   pt: {
     name: "Nikita Slobodeniuc",
-    title: "Desenvolvedor Full Stack",
+    title: "Desenvolvimento de Software · Suporte IT",
     location: "Loures, Lisboa, Portugal",
     email: "nikitayxp@gmail.com",
     phone: "+351 937 855 313",
@@ -67,7 +66,13 @@ export const profileContent: Record<Locale, ProfileContent> = {
     github: "https://github.com/nikitayxp",
     resumeUrl: "/CV_Nikita_Slobodeniuc_PT.pdf",
     summary:
-      "Desenvolvedor Full Stack com projetos em Next.js, React Native e Supabase, e experiência prática de 600 horas em contexto empresarial (suporte técnico, administração de Windows e onboarding de equipamentos). Trabalho ponta a ponta: interface, lógica de negócio, base de dados e deploy. Formação em Desenvolvimento de Software no ISTEC e base técnica em Gestão e Programação de Sistemas Informáticos.",
+      "Estudante do 2.º ano do CTeSP em Desenvolvimento de Software no ISTEC Lisboa, com formação profissional em informática e 600 horas de experiência de estágio em suporte técnico. Estou a desenvolver conhecimentos de programação e desenvolvimento de aplicações através da formação e de projetos pessoais.",
+    about: [
+      "Frequento o 2.º ano do CTeSP em Desenvolvimento de Software no ISTEC Lisboa e concluí o curso profissional de Técnico de Gestão e Programação de Sistemas Informáticos.",
+      "Realizei dois estágios curriculares de informática, na Wellow Network e no Colégio Integrado Monte Maior, num total de 600 horas. Nessas experiências, trabalhei em suporte a utilizadores, preparação de equipamentos, configuração de Windows e resolução de problemas de hardware e software.",
+      "Ao longo do curso, tenho desenvolvido bases em diferentes linguagens de programação, bases de dados e desenvolvimento de aplicações, incluindo C# e tecnologias web. Complemento a formação com projetos pessoais e utilizo ferramentas de inteligência artificial como apoio ao planeamento, estudo e revisão de código, procurando compreender e aplicar o que aprendo.",
+      "Resido em Loures, tenho carta de condução e estou à procura de oportunidades na área tecnológica onde possa contribuir, aprender com profissionais experientes e desenvolver as minhas competências.",
+    ],
     ctaPrimary: "Ver Projetos",
     ctaSecondary: "Falar Comigo",
     sections: {
@@ -79,67 +84,53 @@ export const profileContent: Record<Locale, ProfileContent> = {
       contact: "Contacto",
     },
     skills: {
-      languages: [
-        "JavaScript",
-        "TypeScript",
-        "C#",
-        "C++",
-        "Kotlin",
-        "SQL",
-        "HTML5",
-        "CSS3",
-      ],
-      frontendAndMobile: [
-        "React",
-        "React Native",
-        "Expo",
-        "Next.js (App Router)",
-        "Tailwind CSS",
-        "Framer Motion",
-      ],
-      backendAndCloud: [
-        "Supabase (PostgreSQL, Auth, migrations SQL)",
-        "Firebase",
-        "Vercel",
-        "APIs REST",
-      ],
-      tools: [
-        "Git & GitHub",
-        "Monorepos",
-        "Autenticação OAuth",
-        "i18n (PT/EN)",
-        "Microsoft 365",
-      ],
-      systemsAndHardware: [
+      support: [
+        "Suporte a utilizadores",
         "Instalação e configuração de Windows",
-        "Manutenção e formatação de PCs",
-        "Diagnóstico de avarias",
-        "Onboarding de utilizadores",
+        "Preparação e manutenção de equipamentos",
+        "Resolução de problemas de hardware e software",
+      ],
+      development: [
+        "Lógica de programação",
+        "C#",
+        "SQL e bases de dados",
+        "HTML, CSS e JavaScript",
+        "Desenvolvimento de aplicações",
+        "Git e GitHub",
+      ],
+      projectTechnologies: [
+        "Next.js",
+        "React Native e Expo",
+        "TypeScript",
+        "Supabase",
+        "Tailwind CSS",
+        "Vercel",
       ],
     },
     projects: [
       {
-        name: "LyftTrack",
-        stack: ["React Native (Expo)", "Next.js", "TypeScript", "Supabase"],
+        name: "Portefólio — Nikita Slobodeniuc",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         summary:
-          "Aplicação de treino em monorepo com apps mobile/web (Expo Router) e landing em Next.js. Autenticação por email e Google, treinos ativos, templates, estatísticas, feed social e suporte offline básico com sincronização.",
-        githubUrl: "https://github.com/nikitayxp/lyfttrack",
-        siteUrl: "https://lyfttrack-site.vercel.app",
-        appUrl: "https://lyfttrack-app.vercel.app",
-      },
-      {
-        name: "Este Portefólio",
-        stack: [
-          "Next.js 16",
-          "React 19",
-          "TypeScript",
-          "Tailwind CSS 4",
-          "Framer Motion",
-        ],
-        summary:
-          "Site pessoal bilingue para apresentar projetos, experiência e competências, com animações acessíveis, temas claro/escuro e contacto direto através do Gmail.",
+          "Portefólio pessoal bilingue (PT/EN), criado com Next.js e ferramentas de IA, para apresentar o meu percurso, experiência e projetos.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
         githubLabel: "Ver código",
+      },
+      {
+        name: "LyftTrack — Site de apresentação",
+        stack: ["Next.js", "TypeScript"],
+        summary:
+          "Site de apresentação do LyftTrack, criado com Next.js e ferramentas de IA, com informação sobre o projeto e as funcionalidades da aplicação.",
+        githubUrl: "https://github.com/nikitayxp/lyfttrack",
+        siteUrl: "https://lyfttrack-site.vercel.app",
+      },
+      {
+        name: "LyftTrack — Aplicação web",
+        stack: ["React Native (Expo)", "TypeScript", "Supabase"],
+        summary:
+          "Projeto pessoal de uma aplicação web para registar treinos e acompanhar a evolução, desenvolvido com recurso a ferramentas de IA. Em desenvolvimento.",
+        githubUrl: "https://github.com/nikitayxp/lyfttrack",
+        appUrl: "https://lyfttrack-app.vercel.app",
       },
     ],
     experience: [
@@ -185,7 +176,7 @@ export const profileContent: Record<Locale, ProfileContent> = {
   },
   en: {
     name: "Nikita Slobodeniuc",
-    title: "Full Stack Developer",
+    title: "Software Development · IT Support",
     location: "Loures, Lisbon, Portugal",
     email: "nikitayxp@gmail.com",
     phone: "+351 937 855 313",
@@ -193,7 +184,13 @@ export const profileContent: Record<Locale, ProfileContent> = {
     github: "https://github.com/nikitayxp",
     resumeUrl: "/CV_Nikita_Slobodeniuc_EN.pdf",
     summary:
-      "Full Stack Developer with projects in Next.js, React Native and Supabase, plus 600 hours of hands-on corporate experience in IT support, Windows administration and device onboarding. Comfortable working end to end: interface, business logic, database and deployment. Studying Software Development at ISTEC, with a technical background in IT Systems Management and Programming.",
+      "Second-year Software Development CTeSP student at ISTEC Lisbon, with vocational training in IT and 600 hours of internship experience in technical support. I am building my programming and application development knowledge through my studies and personal projects.",
+    about: [
+      "I am in the second year of the Software Development CTeSP at ISTEC Lisbon and have completed a vocational course in IT Systems Management and Programming.",
+      "I completed two curricular IT internships at Wellow Network and Colégio Integrado Monte Maior, totalling 600 hours. My work included user support, device preparation, Windows configuration and troubleshooting hardware and software issues.",
+      "My studies cover the foundations of different programming languages, databases and application development, including C# and web technologies. I also work on personal projects and use AI tools to support planning, study and code review, aiming to understand and apply what I learn.",
+      "I live in Loures, hold a driving licence and am looking for opportunities in technology where I can contribute, learn from experienced professionals and develop my skills.",
+    ],
     ctaPrimary: "View Projects",
     ctaSecondary: "Contact Me",
     sections: {
@@ -205,67 +202,53 @@ export const profileContent: Record<Locale, ProfileContent> = {
       contact: "Contact",
     },
     skills: {
-      languages: [
-        "JavaScript",
-        "TypeScript",
-        "C#",
-        "C++",
-        "Kotlin",
-        "SQL",
-        "HTML5",
-        "CSS3",
-      ],
-      frontendAndMobile: [
-        "React",
-        "React Native",
-        "Expo",
-        "Next.js (App Router)",
-        "Tailwind CSS",
-        "Framer Motion",
-      ],
-      backendAndCloud: [
-        "Supabase (PostgreSQL, Auth, SQL migrations)",
-        "Firebase",
-        "Vercel",
-        "REST APIs",
-      ],
-      tools: [
-        "Git & GitHub",
-        "Monorepos",
-        "OAuth authentication",
-        "i18n (PT/EN)",
-        "Microsoft 365",
-      ],
-      systemsAndHardware: [
+      support: [
+        "User support",
         "Windows installation and configuration",
-        "PC maintenance and imaging",
-        "Hardware troubleshooting",
-        "User onboarding",
+        "Device preparation and maintenance",
+        "Hardware and software troubleshooting",
+      ],
+      development: [
+        "Programming fundamentals",
+        "C#",
+        "SQL and databases",
+        "HTML, CSS and JavaScript",
+        "Application development",
+        "Git and GitHub",
+      ],
+      projectTechnologies: [
+        "Next.js",
+        "React Native and Expo",
+        "TypeScript",
+        "Supabase",
+        "Tailwind CSS",
+        "Vercel",
       ],
     },
     projects: [
       {
-        name: "LyftTrack",
-        stack: ["React Native (Expo)", "Next.js", "TypeScript", "Supabase"],
+        name: "Portfolio — Nikita Slobodeniuc",
+        stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
         summary:
-          "Workout tracking app in a monorepo: mobile/web client with Expo Router and a Next.js landing page. Email and Google auth, live workouts, routine templates, statistics, social feed and basic offline sync.",
-        githubUrl: "https://github.com/nikitayxp/lyfttrack",
-        siteUrl: "https://lyfttrack-site.vercel.app",
-        appUrl: "https://lyfttrack-app.vercel.app",
-      },
-      {
-        name: "This Portfolio",
-        stack: [
-          "Next.js 16",
-          "React 19",
-          "TypeScript",
-          "Tailwind CSS 4",
-          "Framer Motion",
-        ],
-        summary:
-          "Bilingual personal site for presenting projects, experience and skills, with accessible animations, light and dark themes, and direct contact through Gmail.",
+          "Bilingual personal portfolio (PT/EN), created with Next.js and AI tools to present my background, experience and projects.",
         githubUrl: "https://github.com/nikitayxp/portfolio-site",
         githubLabel: "View source",
+      },
+      {
+        name: "LyftTrack — Project website",
+        stack: ["Next.js", "TypeScript"],
+        summary:
+          "LyftTrack project website, created with Next.js and AI tools, with information about the project and the application's features.",
+        githubUrl: "https://github.com/nikitayxp/lyfttrack",
+        siteUrl: "https://lyfttrack-site.vercel.app",
+      },
+      {
+        name: "LyftTrack — Web application",
+        stack: ["React Native (Expo)", "TypeScript", "Supabase"],
+        summary:
+          "Personal web application project for logging workouts and tracking progress, developed with AI tools. In development.",
+        githubUrl: "https://github.com/nikitayxp/lyfttrack",
+        appUrl: "https://lyfttrack-app.vercel.app",
       },
     ],
     experience: [

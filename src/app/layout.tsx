@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Nikita Slobodeniuc",
   },
   description:
-    "Full Stack Developer portfolio — Next.js, React Native, Supabase and modern web apps.",
+    "Nikita Slobodeniuc — Software Development student at ISTEC Lisbon, with IT support internship experience and personal projects.",
   metadataBase: new URL("https://nikitayxp.is-a.dev"),
   alternates: {
     languages: {

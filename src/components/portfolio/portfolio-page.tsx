@@ -66,14 +66,14 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navProjects: "Projetos",
       navExperience: "Experiência",
       navContact: "Contacto",
-      heroKicker: "Desenvolvedor Full Stack · ISTEC Lisboa",
+      heroKicker: "Estudante de Desenvolvimento de Software · ISTEC Lisboa",
       viewGithub: "Ver no GitHub",
       viewSite: "Ver site",
       viewApp: "Ver app",
       downloadResume: "Download CV",
-      impactTag: "Projetos pessoais e escolares publicados online.",
+      impactTag: "Formação em programação · Experiência em suporte IT",
       availability:
-        "Disponível para oportunidades em desenvolvimento full-stack e colaborações freelance.",
+        "À procura de oportunidades na área tecnológica onde possa contribuir, aprender e desenvolver as minhas competências.",
     },
     en: {
       navAbout: "About",
@@ -81,14 +81,14 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
       navProjects: "Projects",
       navExperience: "Experience",
       navContact: "Contact",
-      heroKicker: "Full Stack Developer · ISTEC Lisbon",
+      heroKicker: "Software Development Student · ISTEC Lisbon",
       viewGithub: "View on GitHub",
       viewSite: "View site",
       viewApp: "View app",
       downloadResume: "Download Resume",
-      impactTag: "Personal and school projects published online.",
+      impactTag: "Programming studies · IT support experience",
       availability:
-        "Available for full-stack development opportunities and freelance collaborations.",
+        "Looking for opportunities in technology where I can contribute, learn and develop my skills.",
     },
   }[locale];
 
@@ -102,24 +102,25 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
 
   const skillGroups = [
     {
-      label: locale === "pt" ? "Linguagens" : "Languages",
-      items: content.skills.languages,
+      label: locale === "pt" ? "Experiência em suporte IT" : "IT support experience",
+      description: locale === "pt"
+        ? "Experiência adquirida nos estágios curriculares de informática."
+        : "Experience gained during my curricular IT internships.",
+      items: content.skills.support,
     },
     {
-      label: locale === "pt" ? "Frontend e Mobile" : "Frontend and Mobile",
-      items: content.skills.frontendAndMobile,
+      label: locale === "pt" ? "Conhecimentos em desenvolvimento" : "Development foundations",
+      description: locale === "pt"
+        ? "Bases que estou a consolidar através do curso e de projetos de estudo."
+        : "Foundations I am building through my studies and learning projects.",
+      items: content.skills.development,
     },
     {
-      label: locale === "pt" ? "Backend e Cloud" : "Backend and Cloud",
-      items: content.skills.backendAndCloud,
-    },
-    {
-      label: locale === "pt" ? "Ferramentas e práticas" : "Tools and practices",
-      items: content.skills.tools,
-    },
-    {
-      label: locale === "pt" ? "Sistemas e Hardware" : "Systems and Hardware",
-      items: content.skills.systemsAndHardware,
+      label: locale === "pt" ? "Tecnologias utilizadas nos projetos" : "Technologies used in my projects",
+      description: locale === "pt"
+        ? "Tecnologias presentes nos projetos apresentados abaixo."
+        : "Technologies used in the projects shown below.",
+      items: content.skills.projectTechnologies,
     },
   ];
 
@@ -357,15 +358,18 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
             className="font-display text-3xl sm:text-4xl"
             stagger={0.05}
           />
-          <motion.p
-            className="mt-4 max-w-3xl text-sm leading-7 text-muted sm:text-base"
-            variants={fadeSlideUp(0.2)}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {content.summary}
-          </motion.p>
+          {content.about.map((paragraph) => (
+            <motion.p
+              key={paragraph}
+              className="mt-4 max-w-3xl text-sm leading-7 text-muted sm:text-base"
+              variants={fadeSlideUp(0.2)}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              {paragraph}
+            </motion.p>
+          ))}
         </SectionReveal>
         <SectionReveal
           as="section"
@@ -402,6 +406,9 @@ export function PortfolioPage({ locale }: PortfolioPageProps) {
                   <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-muted">
                     {group.label}
                   </h3>
+                  <p className="mt-2 text-sm leading-6 text-muted">
+                    {group.description}
+                  </p>
                   <ul className="mt-3 flex flex-wrap gap-2">
                     {group.items.map((item) => (
                       <li
